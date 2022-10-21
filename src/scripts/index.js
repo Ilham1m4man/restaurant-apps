@@ -8,17 +8,24 @@ const hero = document.querySelector('.hero');
 const main = document.querySelector('main');
 const navList = document.querySelector('.list-container');
 
-menu.addEventListener('click', function (event) {
-    navList.classList.toggle('open');
-    event.stopPropagation();
-});
+['click', 'keydown'].map( (event) => 
+    menu.addEventListener(event, function (e) {
+        navList.classList.toggle('open');
+        console.log('jalan cuk')
+        e.stopPropagation();
+    })
+);
 
-hero.addEventListener('click', function () {
-    navList.classList.remove('open');
-});
+['click', 'keydown'].map( (event) => 
+    hero.addEventListener(event, function () {
+        navList.classList.remove('open');
+    })
+);
 
-main.addEventListener('click', function () {
-    navList.classList.remove('open');
-});
+['click', 'keydown'].map( (event) => 
+    main.addEventListener(event, function () {
+        navList.classList.remove('open');
+    })
+);
 
 console.log('Hello Coders! :)');
