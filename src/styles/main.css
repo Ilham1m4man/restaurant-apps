@@ -71,20 +71,24 @@ a.skip-main:active {
 #drawer .nav-section {
   padding: 0.8em 2em;
   display: flex;
-  gap: 1em;
+  gap: 0.1em;
   align-items: center;
 
 }
 
 #header__inner {
-  flex-basis: 60%;
+  flex-basis: 55%;
+}
+
+#header__title {
+  white-space: nowrap;
 }
 
 #nav__list {
   display: flex;
   flex-direction: row;
   gap: 1em;
-  flex-basis: 40%;
+  flex-basis: 45%;
 }
 
 li > a {
@@ -93,6 +97,8 @@ li > a {
   text-transform: uppercase;
   display: inline-block;
   position: relative;
+  padding: 0.8em 2em;
+  white-space: nowrap;
   transition: all 100ms ease-in-out;
 }
 
@@ -120,12 +126,13 @@ li > a:active {
 
 li {
   list-style: none;
-
+  padding: 0;
+  margin: 0;
 }
 
 .hero {
   background-color: rgb(var(--crd-color));
-  margin-top: 5em;
+  margin-top: 6.15em;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid rgb(var(--bsc-color));
@@ -164,7 +171,8 @@ main>h2 {
   transition: all 150ms ease-in-out;
 }
 
-.post-item:hover {
+.post-item:hover, 
+.post-item:focus {
   box-shadow: 0 10px 10px 1px rgb(var(--bsc-color));
   transform: translateY(-10px);
 }
@@ -230,9 +238,9 @@ footer {
 
 #drawer>#header__menu {
   font-size: 1.5em;
-  margin: 10px auto;
+  margin: 0.5em auto;
   display: block;
-  width: 30px;
+  width: 44px;
 }
 
 @media screen and (min-width: 814px) {
@@ -256,11 +264,9 @@ footer {
     width: 100%;
     position: absolute;
 
-    /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(0, -500px);
     transform: translate(0, -500px);
 
-    /* Optionally, we animate the drawer. */
     transition: transform 0.3s ease;
   }
 
